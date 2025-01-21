@@ -1,0 +1,222 @@
+
+C:\Windows\system32>cd c
+The system cannot find the path specified.
+
+C:\Windows\system32>cd c:
+C:\Windows\System32
+
+C:\Windows\system32>cd c:\
+
+c:\>cd Users\fondo\Desktop\Online-Gaming-Tech
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech>cd "Lab 1"
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --full-generate-key
+gpg (GnuPG) 2.4.7; Copyright (C) 2024 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (9) ECC (sign and encrypt) *default*
+  (10) ECC (sign only)
+  (14) Existing key from card
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 1y
+Key expires at 01/21/26 20:47:48 GMT Standard Time
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: Peter Gibbons
+Email address: peter.gibbons@initech.com
+Comment:
+You selected this USER-ID:
+    "Peter Gibbons <peter.gibbons@initech.com>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: directory 'C:\\Users\\fondo\\AppData\\Roaming\\gnupg\\openpgp-revocs.d' created
+gpg: revocation certificate stored as 'C:\\Users\\fondo\\AppData\\Roaming\\gnupg\\openpgp-revocs.d\\4B35863F6E2F81DFBB9100B3A4F749DD8F8AA36E.rev'
+public and secret key created and signed.
+
+pub   rsa4096 2025-01-21 [SC] [expires: 2026-01-21]
+      4B35863F6E2F81DFBB9100B3A4F749DD8F8AA36E
+uid                      Peter Gibbons <peter.gibbons@initech.com>
+sub   rsa4096 2025-01-21 [E] [expires: 2026-01-21]
+
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --list-keys
+[keyboxd]
+---------
+pub   rsa4096 2025-01-21 [SC] [expires: 2026-01-21]
+      4B35863F6E2F81DFBB9100B3A4F749DD8F8AA36E
+uid           [ultimate] Peter Gibbons <peter.gibbons@initech.com>
+sub   rsa4096 2025-01-21 [E] [expires: 2026-01-21]
+
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --output peter.gibbons@initech.com.asc.revoke
+gpg: WARNING: no command supplied.  Trying to guess what you mean ...
+--gen-revoke peter.gibbons@initech.com
+
+
+C:\Windows\system32>cd "c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1"
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --output peter.gibbons@initech.com.asc.revoke --gen-revoke peter.gibbons@initech.com
+
+sec  rsa4096/A4F749DD8F8AA36E 2025-01-21 Peter Gibbons <peter.gibbons@initech.com>
+
+Create a revocation certificate for this key? (y/N) y
+Please select the reason for the revocation:
+  0 = No reason specified
+  1 = Key has been compromised
+  2 = Key is superseded
+  3 = Key is no longer used
+  Q = Cancel
+(Probably you want to select 1 here)
+Your decision? 0
+Enter an optional description; end it with an empty line:
+> Created immediately after keypair generation
+>
+Reason for revocation: No reason specified
+Created immediately after keypair generation
+Is this okay? (y/N) y
+ASCII armored output forced.
+Revocation certificate created.
+
+Please move it to a medium which you can hide away; if Mallory gets
+access to this certificate he can use it to make your key unusable.
+It is smart to print this certificate and store it away, just in case
+your media become unreadable.  But have some caution:  The print system of
+your machine might store the data and make it available to others!
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --output pubkey.peter.gibbons@initech.com.gpg --export peter.gibbons@initech.com
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --output pubkey.peter.gibbons@initech.com.gpg.asc --armor --export peter.gibbons@initech.com
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --import pubkey.bob.porter@initech.com.gpg.asc
+gpg: can't open 'pubkey.bob.porter@initech.com.gpg.asc': No such file or directory
+gpg: Total number processed: 0
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --import pubkey.bob.porter@initech.com.gpg.asc
+gpg: key EBC14BEB9460B02E: public key "Bob Porter <bob.porter@initech.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --list-keys
+[keyboxd]
+---------
+pub   rsa4096 2020-12-07 [SC]
+      399CA583929A08FFF20686F8EBC14BEB9460B02E
+uid           [ unknown] Bob Porter <bob.porter@initech.com>
+sub   rsa4096 2020-12-07 [E]
+
+pub   rsa4096 2025-01-21 [SC] [expires: 2026-01-21]
+      4B35863F6E2F81DFBB9100B3A4F749DD8F8AA36E
+uid           [ultimate] Peter Gibbons <peter.gibbons@initech.com>
+sub   rsa4096 2025-01-21 [E] [expires: 2026-01-21]
+
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --keyid-format LONG --list-keys
+[keyboxd]
+---------
+pub   rsa4096/EBC14BEB9460B02E 2020-12-07 [SC]
+      399CA583929A08FFF20686F8EBC14BEB9460B02E
+uid                 [ unknown] Bob Porter <bob.porter@initech.com>
+sub   rsa4096/FFCCBBBE86B8A5BA 2020-12-07 [E]
+
+pub   rsa4096/A4F749DD8F8AA36E 2025-01-21 [SC] [expires: 2026-01-21]
+      4B35863F6E2F81DFBB9100B3A4F749DD8F8AA36E
+uid                 [ultimate] Peter Gibbons <peter.gibbons@initech.com>
+sub   rsa4096/F5110FF79B64B88C 2025-01-21 [E] [expires: 2026-01-21]
+
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --sign-key FFCCBBBE86B8A5BA
+
+pub  rsa4096/EBC14BEB9460B02E
+     created: 2020-12-07  expires: never       usage: SC
+     trust: unknown       validity: unknown
+sub  rsa4096/FFCCBBBE86B8A5BA
+     created: 2020-12-07  expires: never       usage: E
+[ unknown] (1). Bob Porter <bob.porter@initech.com>
+
+
+pub  rsa4096/EBC14BEB9460B02E
+     created: 2020-12-07  expires: never       usage: SC
+     trust: unknown       validity: unknown
+ Primary key fingerprint: 399C A583 929A 08FF F206  86F8 EBC1 4BEB 9460 B02E
+
+     Bob Porter <bob.porter@initech.com>
+
+Are you sure that you want to sign this key with your
+key "Peter Gibbons <peter.gibbons@initech.com>" (A4F749DD8F8AA36E)
+
+Really sign? (y/N) y
+
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --list-sigs FFCCBBBE86B8A5BA
+pub   rsa4096 2020-12-07 [SC]
+      399CA583929A08FFF20686F8EBC14BEB9460B02E
+uid           [  full  ] Bob Porter <bob.porter@initech.com>
+sig 3        EBC14BEB9460B02E 2020-12-07  [self-signature]
+sig          A4F749DD8F8AA36E 2025-01-21  Peter Gibbons <peter.gibbons@initech.com>
+sub   rsa4096 2020-12-07 [E]
+sig          EBC14BEB9460B02E 2020-12-07  [self-signature]
+
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --update-trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   1  trust: 0-, 0q, 0n, 0m, 0f, 1u
+No trust value assigned to:
+pub   rsa4096 2020-12-07 [SC]
+      "Bob Porter <bob.porter@initech.com>"
+ Primary key fingerprint: 399C A583 929A 08FF F206  86F8 EBC1 4BEB 9460 B02E
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  s = skip this key
+  q = quit
+
+Your decision? 2
+gpg: depth: 1  valid:   1  signed:   0  trust: 0-, 0q, 1n, 0m, 0f, 0u
+gpg: next trustdb check due at 2026-01-21
+      399CA583929A08FFF20686F8EBC14BEB9460B02E
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --output secret-message.txt --armor --encrypt --sign --recipient FFCCBBBE86B8A5BA message.txt
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --decrypt secret-message.txt
+gpg: encrypted with rsa4096 key, ID FFCCBBBE86B8A5BA, created 2020-12-07
+      "Bob Porter <bob.porter@initech.com>"
+gpg: public key decryption failed: No secret key
+gpg: decryption failed: No secret key
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>gpg --verify signed-reply.txt
+gpg: Signature made 12/07/20 16:20:33 GMT Standard Time
+gpg:                using RSA key 399CA583929A08FFF20686F8EBC14BEB9460B02E
+gpg: Good signature from "Bob Porter <bob.porter@initech.com>" [full]
+
+c:\Users\fondo\Desktop\Online-Gaming-Tech\Lab 1>
