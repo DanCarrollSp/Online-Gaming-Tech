@@ -1,0 +1,56 @@
+# Nebula Configuration File for Lighthouse and Nodes
+
+# PKI (Public Key Infrastructure) - Certificate Paths
+pki:
+  ca: ca.crt
+  cert: lighthouse.crt
+  key: lighthouse.key
+
+# Static Host Map - Define Lighthouse Public IP
+static_host_map:
+  "10.128.0.1": ["35.239.80.110:4242"]
+
+# Lighthouse Configuration
+lighthouse:
+  am_lighthouse: true   # Set true for Lighthouse, false for clients
+  interval: 60          # How often nodes report back to Lighthouse
+  hosts: []             # Must be empty on Lighthouse
+
+# Listening Port Configuration
+listen:
+  host: 0.0.0.0
+  port: 4242
+
+# Punchy - Helps with NAT Traversal
+punchy:
+  punch: true
+  # respond: true # Enable if needed for NAT issues
+
+# Firewall Rules
+firewall:
+  conntrack:
+    tcp_timeout: 12m
+    udp_timeout: 3m
+    default_timeout: 10m
+
+  outbound:
+    - port: any
+      proto: any
+      host: any
+
+  inbound:
+    - port: any
+      proto: any
+      host: any
+
+# Logging Configuration
+logging:
+  level: info
+  format: text
+  # disable_timestamp: true  # Uncomment if you want to disable timestamps
+
+# Tunnel Configuration
+tun:
+  disabled: false
+  dev: nebula1
+  mtu: 1300
